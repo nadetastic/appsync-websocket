@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import appsyncLogo from "./assets/appsync.png";
 import "./App.css";
 import { AppSyncWebSocket } from "./utils/realtime";
+import { WithUrql } from "./WithUrql";
 
 interface Message {
   id: string;
@@ -18,17 +19,19 @@ function App() {
       </div>
       <h1>AppSync Realtime</h1>
       <div className="card">
-        <p>Open network tools to view the subscription in process.</p>
+        <WithUrql />
         <ReusableComponent
-          endpoint="wss://appsync_endpoint-1.appsync-realtime-api.us-west-2.amazonaws.com/graphql"
-          host="appsync_endpoint-1.appsync-realtime-api.us-west-2.amazonaws.com"
-          apiKey={import.meta.env.VITE_APPSYNC_1_APIKEY}
+          endpoint="wss://ce6zukrw4becpc6wyaxm3fjbyi.appsync-realtime-api.us-east-1.amazonaws.com/graphql"
+          host="ce6zukrw4becpc6wyaxm3fjbyi.appsync-api.us-east-1.amazonaws.com"
+          // apiKey={import.meta.env.VITE_APPSYNC_APIKEY}
+          apiKey="da2-hjnurlehcncxzhcejk7loww2mq"
         />
+        {/*}
         <ReusableComponent
           endpoint="wss://appsync_endpoint-2.appsync-realtime-api.us-west-2.amazonaws.com/graphql"
           host="appsync_endpoint-2.appsync-realtime-api.us-west-2.amazonaws.com"
           apiKey={import.meta.env.VITE_APPSYNC_2_APIKEY}
-        />
+        /> */}
       </div>
     </>
   );

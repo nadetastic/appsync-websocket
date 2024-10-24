@@ -32,6 +32,7 @@ export class AppSyncWebSocket {
     }
     this.connectionPromise = new Promise((resolve) => {
       this.resolveConnection = resolve;
+
       const headerString = JSON.stringify(this._headers);
       const headerBase64 = btoa(headerString);
       const payloadBase64 = btoa("{}");
